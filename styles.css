@@ -4,9 +4,10 @@
   body {
     margin:0;
     padding:0;
-    background-color:#A9BC00;
+    background-color:#eee;
     overflow-y: scroll;
     overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   a {
     text-decoration:none;
@@ -24,8 +25,14 @@
     left:-220px; /*Ocultamos el menú en la parte izquierda para que no se vea a menos que pulsemos sobre la hamburguesa*/
     padding-top:47px;
     background-color: rgba(29, 33, 32, 1);
-    border-right:4px solid rgba(114, 126, 3, 1);
-    transition:all .5s ease; /*Damos a la caja del menú una transición para que tenga un desplazamiento suave*/
+    border-right: 4px solid transparent; /*Creas el borde */
+    border-image: linear-gradient(to bottom, #00ffef 0%, #00dbff 20%, #0092ff 40%, #0045ff 60%, #6200ff 80%, #9a00ff 100%) 1; /*agregas el gradiente a las esquinas*/
+    transition:all .55s ease; /*Damos a la caja del menú una transición para que tenga un desplazamiento suave*/
+    z-index: 11; /* Ubicamos el nav por encima de la hamburguesa para que se vea bien*/
+  }
+
+  .nav_img{
+    width: 9em;
   }
      /*Estilos de los li del menú*/
      .nav__item {
@@ -61,7 +68,7 @@
             height:0;
             position:absolute;/*Le damos al after una posición absoluta relativa al li que lo contiene*/
             border-top:16.5px solid transparent;
-            border-left:17px solid rgba(114, 126, 3, 1);
+            border-left:17px solid #00ffef;
             border-bottom:17px solid transparent;
             top:.5px;
             right:-21px;
@@ -69,13 +76,13 @@
         }
     /*Estos son los estilos de la hamburguesa del menú que abre y cierra el mismo*/
     .menu-toogle {
-      position:absolute; /*Lo posicionamos absolutamente para poder darle una posición y poder moverlo según el menú esté abierto o cerrado*/
+      position:fixed; /*Lo posicionamos absolutamente para poder darle una posición y poder moverlo según el menú esté abierto o cerrado*/
       width: 35px;
-      line-height:1.1;
+      line-height:30.3;
       text-align:center;
-      top:6.5px; /*Le damos una posición top y left en donde queramos que se encuentre la hamburguesa del menú*/
-      left: 8px; 
-      border-radius:3px;
+      top: 0px; /*Le damos una posición top y left en donde queramos que se encuentre la hamburguesa del menú*/
+      left: 0px; 
+      border-radius: 0px;
       background-color: #142b25;
       transition: all .5s ease; /*Añadimos una transición para que realice un desplazamineto suave*/
       z-index:10;
@@ -99,37 +106,11 @@
         text-align:center;
         position:relative;
       }
-          .header-w figure:before {
-            content:"O";
-            width:15px;
-            height:15px;
-            position:absolute;
-            background-color:white;
-            border-radius:100%;
-            color:#A9BC00;
-            font-size:120%;
-            font-weight:bolder;
-            font-family:verdana;
-            left:42vw;
-            top:9vw;     
-          }
-          .header-w figure:after {
-            content:"O";
-            width:15px;
-            height:15px;
-            position:absolute;
-            background-color:white;
-            border-radius:100%;
-            color:#A9BC00;
-            font-size:120%;
-            font-weight:bolder;
-            font-family:verdana;
-            left:50.8vw;
-            top:9vw; 
-          }
+      
       .featured-img {
         margin:3em 6vw 0 0;
-        border:4px solid white;
+        border:4px inset #0045ff;
+        background: #f9f9f9;
         border-radius:100%;
       }
       .header-w__description {
@@ -144,12 +125,10 @@
           .header-w__title
           {
             font-size:300%;
-            font-family:Lobster;
             margin:1em 0 0 0;
           }
           .header-w__title2 {
             font-size:250%;
-            font-family:Lobster;
             margin:0;
           }
       .paragraph {
@@ -172,6 +151,6 @@
         margin-left:200px; /*Cuando el checkbox asigna un margen al contenedor principal para que se desplace junto con el menú*/
       }
       .checkbox:checked ~ .menu-toogle { 
-        left:208px;
+        left:200px;
         position:fixed; /*Fijamos la hamburgues para que se desplace junto con el menú*/
       }
