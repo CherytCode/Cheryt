@@ -16,6 +16,38 @@
     $Layout ☰
   \********************/
   
+  body::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 8px;    /* Tamaño del scroll en horizontal */
+    /*display: none;   Ocultar scroll */
+  }
+
+/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+body::-webkit-scrollbar-thumb {
+  background: rgba(194, 194, 194, 0.616);
+}
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: rgba(158, 158, 158, 0.644);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+/* Cambiamos el fondo cuando esté en active */
+body::-webkit-scrollbar-thumb:active {
+  background: rgba(104, 104, 104, 0.616);
+}
+
+/* Ponemos un color de fondo y redondeamos las esquinas del track */
+body::-webkit-scrollbar-track {
+  background: rgb(0,255,239);
+  background: linear-gradient(180deg, rgba(0,255,239,1) 0%, rgba(0,219,255,1) 20%, rgba(0,146,255,1) 40%, rgba(0,69,255,1) 60%, rgba(98,0,255,1) 80%, rgba(154,0,255,1) 100%);
+}
+/* Cambiamos el fondo cuando esté en active o hover */
+body::-webkit-scrollbar-track:hover,
+body::-webkit-scrollbar-track:active {
+  background: rgb(0,255,239);
+  background: linear-gradient(180deg, rgba(0,255,239,1) 0%, rgba(0,219,255,1) 20%, rgba(0,146,255,1) 40%, rgba(0,69,255,1) 60%, rgba(98,0,255,1) 80%, rgba(154,0,255,1) 100%);
+}
+
   /*Damos estilos al menú*/
   .nav {
     position:absolute;
@@ -86,6 +118,7 @@
       background-color: #142b25;
       transition: all .5s ease; /*Añadimos una transición para que realice un desplazamineto suave*/
       z-index:10;
+      border-right: 2px solid #ffffff87;
     }
       /*Añadimos la haburguesa y le damos unos estilos*/
       .menu-toogle::before {
@@ -99,20 +132,22 @@
     width:100%;
     height:100vh;
     transition: all .5s ease;
+    position: absolute;
   }   
       .header-w figure {
         width:100%;
-        height:150px;
+        height:250px;
         text-align:center;
         position:relative;
       }
       
       .featured-img {
-        margin:3em 6vw 0 0;
-        border:4px inset #0045ff;
-        background: #f9f9f9;
+        margin:3em 4vw 0 0;
+        border:4px inset #00aeff42;
         border-radius:100%;
+        width: 200px;
       }
+
       .header-w__description {
         width:80%;
         height:auto;
@@ -124,18 +159,22 @@
       }
           .header-w__title
           {
-            font-size:300%;
-            margin:1em 0 0 0;
+            font-size:500%;
+            margin:0.5em 0 1em 0;
+            line-height: 0px;
+            color: #eee;
           }
           .header-w__title2 {
             font-size:250%;
             margin:0;
+            color: #eee;
           }
       .paragraph {
         width:80%;
         margin:0 auto;
         text-align:center;
         font-family:'Source Sans Pro', sans-serif;
+        color: #eee;
       }
   
       /*Estos son los estilos que le dan la funcionalidad al menú*/
@@ -154,3 +193,9 @@
         left:200px;
         position:fixed; /*Fijamos la hamburgues para que se desplace junto con el menú*/
       }
+
+#img-header{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
