@@ -39,13 +39,18 @@ body::-webkit-scrollbar-thumb:active {
 /* Ponemos un color de fondo y redondeamos las esquinas del track */
 body::-webkit-scrollbar-track {
   background: rgb(0,255,239);
-  background: linear-gradient(180deg, rgba(0,255,239,1) 0%, rgba(0,219,255,1) 20%, rgba(0,146,255,1) 40%, rgba(0,69,255,1) 60%, rgba(98,0,255,1) 80%, rgba(154,0,255,1) 100%);
+  background: linear-gradient(360deg, #ff0000 0%, #ff8000 10%, #feff00 20%, #3dff00 30%, #00fff4 40%, #00f1ff 50%, #0027ff 60%, #8800ff 70%, #c400ff 80%, #ff0097 90%, #ff0000 100%);
 }
 /* Cambiamos el fondo cuando esté en active o hover */
 body::-webkit-scrollbar-track:hover,
 body::-webkit-scrollbar-track:active {
   background: rgb(0,255,239);
-  background: linear-gradient(180deg, rgba(0,255,239,1) 0%, rgba(0,219,255,1) 20%, rgba(0,146,255,1) 40%, rgba(0,69,255,1) 60%, rgba(98,0,255,1) 80%, rgba(154,0,255,1) 100%);
+  background: linear-gradient(360deg, #ff0000 0%, #ff8000 10%, #feff00 20%, #3dff00 30%, #00fff4 40%, #00f1ff 50%, #0027ff 60%, #8800ff 70%, #c400ff 80%, #ff0097 90%, #ff0000 100%);
+}
+
+.clearfix{
+    clear: both;
+    float: none;
 }
 
   /*Damos estilos al menú*/
@@ -118,7 +123,8 @@ body::-webkit-scrollbar-track:active {
       background-color: #142b25;
       transition: all .5s ease; /*Añadimos una transición para que realice un desplazamineto suave*/
       z-index:10;
-      border-right: 2px solid #ffffff87;
+      border-right: 2px solid transparent;
+      border-image: linear-gradient(to bottom, #ff0000 0%, #ff8000 10%, #feff00 20%, #3dff00 30%, #00fff4 40%, #00f1ff 50%, #0027ff 60%, #8800ff 70%, #c400ff 80%, #ff0097 90%, #ff0000 100%) 1;
     }
       /*Añadimos la haburguesa y le damos unos estilos*/
       .menu-toogle::before {
@@ -175,6 +181,7 @@ body::-webkit-scrollbar-track:active {
         text-align:center;
         font-family:'Source Sans Pro', sans-serif;
         color: #eee;
+        font-weight: 500;
       }
   
       /*Estos son los estilos que le dan la funcionalidad al menú*/
@@ -198,4 +205,132 @@ body::-webkit-scrollbar-track:active {
   position: absolute;
   height: 100%;
   width: 100%;
+}
+
+#masinfo-header{
+  margin: 10.5% auto 0 auto;
+  width: 80%;
+  text-align: center;
+}
+
+#masinfo-header button{
+  background: rgba(0, 0, 0, 0.13);
+  outline: none;
+  color: rgba(255, 255, 255, 0.774);
+  border: 0px;
+  width: 12em;
+  font-size: 2rem;
+  bottom: 20%;
+  border-radius: 50px;
+  transition: 100ms all;
+}
+
+#masinfo-header button:hover{
+  background: rgba(0, 0, 0, 0.781);
+  color: #fff;
+  border-radius: 25px;
+  transition: 200ms all;
+}
+
+.down-arrow:hover {
+  color: #fff;
+}
+
+#masinfo-header button p{
+  margin: 0px;
+  padding: 0px;
+  line-height: 60px;
+  position: inherit;
+}
+
+.down-arrow{
+  position: absolute;
+    left: 0;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.down-arrow {
+  color: rgba(255, 255, 255, 0.774);
+}
+
+.down-arrow {
+  width: 100%;
+  text-align: center;
+  font-size: 5rem;
+}
+
+#contenidoplus{
+  margin: 9px auto;
+  width: 80%;
+  padding: 8px 0px;
+  background: rgba(221, 221, 221, 0.349);
+}
+
+.header-w {
+    height: 98%;
+}
+
+.contenidoint{
+  display: inline-block;
+  width: 50%;
+  height: 26em;
+  overflow: hidden;
+}
+
+.contenidoint img{
+  width: 100%;
+}
+
+.right{
+  float: right;
+}
+
+.left{
+  float: left;
+}
+
+.center{
+  text-align: center;
+}
+
+.contenidoext {
+  padding: 2em 0px 1em 0px;
+  border: 0px;
+}
+
+.border-top{
+  border-top: 4px solid transparent; /*Creas el borde */
+  border-image: linear-gradient(to right, #ff0000 0%, #ff8000 10%, #feff00 20%, #3dff00 30%, #00fff4 40%, #00f1ff 50%, #0027ff 60%, #8800ff 70%, #c400ff 80%, #ff0097 90%, #ff0000 100%) 1;
+
+}
+
+.border-bottom{
+  border-bottom: 4px solid transparent; /*Creas el borde */
+  border-image: linear-gradient(to right, #ff0000 0%, #ff8000 10%, #feff00 20%, #3dff00 30%, #00fff4 40%, #00f1ff 50%, #0027ff 60%, #8800ff 70%, #c400ff 80%, #ff0097 90%, #ff0000 100%) 1;
+
+}
+#contenidotextl h2 {
+  padding: 0px;
+  margin: 0px;
+  font-size: 50px;
+}
+
+#contenidotextr h2 {
+  padding: 0px;
+  margin: 0px;
+  font-size: 50px;
+}
+
+#contenidotextl p {
+  padding: 0px;
+  margin: 0px;
+}
+
+#contenidotextr p {
+  padding: 0px;
+  margin: 0px;
 }
